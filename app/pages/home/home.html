@@ -1,14 +1,21 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      INFO
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content class="home">
+  <div padding>
+    <button block (click)="getSchedules()">Get Schedules!</button>
+  </div>
+  <ion-card *ngFor="let sch of schedules">
+    <ion-card-header>
+      {{ sch.rsc }}
+    </ion-card-header>
+    <ion-card-content>
+      {{ sch.startTime }}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
